@@ -21,8 +21,6 @@
 
 /log
 /temp
-#/platform
-#/modules
 /roles
 /data
 .idea
