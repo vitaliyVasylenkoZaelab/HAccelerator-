@@ -22,7 +22,7 @@
 /log
 /temp
 /bin/
-!/bin/custom
+
 /roles
 /data
 .idea
