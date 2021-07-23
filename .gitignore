@@ -18,7 +18,8 @@
 *.zip
 *.tar.gz
 *.rar
-
+bin/modules
+bin/platform
 /log
 /temp
 /roles
