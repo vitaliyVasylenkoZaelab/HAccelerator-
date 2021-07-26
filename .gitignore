@@ -75,3 +75,15 @@ base.properties
 **/tags/addons
 **/messages/addons
 *_bof.jar
+
+/bin/custom/myproject/myprojecttest/gensrc/*
+/bin/custom/myproject/myprojectbackoffice/gensrc/*
+/bin/custom/myproject/myprojectcore/gensrc/*
+/bin/custom/myproject/myprojectfacades/gensrc/*
+/bin/custom/myproject/myprojectfulfilmentprocess/gensrc/*
+/bin/custom/myproject/myprojectinitialdata/gensrc/*
+
+/bin/custom/myproject/myprojectb2bstorefront/web/webroot/WEB-INF/_ui-src/*
+/bin/custom/myproject/myprojectb2bstorefront/web/webroot/_ui/*
+/bin/custom/myproject/myprojectstorefront/web/webroot/WEB-INF/tld/addons/*
+/bin/custom/myproject/myprojectb2bstorefront/web/webroot/WEB-INF/messages/addons/*
