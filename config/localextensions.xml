@@ -71,7 +71,6 @@
     <extension name='merchandisingservicesbackoffice' />
     <extension name='merchandisingsmartedit' />
     <extension name='merchandisingstorefrontsampledataaddon' />
-    <extension name='cockpit' />
     <extension name='commercefacades' />
     <extension name='commerceservices' />
     <extension name='commerceservicesbackoffice' />
@@ -134,10 +133,6 @@
     <extension name='entitlementbackoffice' />
     <extension name='entitlementfacades' />
     <extension name='entitlementservices' />
-    <extension name='eventtrackingmodel' />
-    <extension name='eventtrackingpublisher' />
-    <extension name='eventtrackingservices' />
-    <extension name='eventtrackingwsaddon' />
     <extension name='inboundservices' />
     <extension name='integrationbackoffice' />
     <extension name='integrationbackofficetest' />
@@ -256,7 +251,6 @@
     <extension name='cms2' />
     <extension name='cms2lib' />
     <extension name='cmsbackoffice' />
-    <extension name='cmscockpit' />
     <extension name='cmsfacades' />
     <extension name='cmsocc' />
     <extension name='cmswebservices' />

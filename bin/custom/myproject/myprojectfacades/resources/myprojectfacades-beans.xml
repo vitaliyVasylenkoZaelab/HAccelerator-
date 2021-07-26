@@ -6,7 +6,7 @@
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;de.hybris.myproject.facades.product.data.GenderData>"/>
-<!--		<property name="genders" type="java.util.List&lt;de.hybris.myproject.facades.product.data.GenderData>"/>-->
+		<property name="scale" type="String"/>
 	</bean>
 
 	<bean class="de.hybris.myproject.facades.product.data.GenderData">
