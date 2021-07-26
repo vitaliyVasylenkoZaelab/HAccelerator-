@@ -62,7 +62,7 @@
     <property as="xs:string" name="oxf.http.ssl.keystore.password" value="123456"/>
     <property as="xs:string" name="oxf.http.ssl.hostname-verifier" value="allow-all"/>
 
-    <property as="xs:string" name="oxf.http.forward-headers" value="Authorization hybris-Proxy-d5d8314e-2d5d-4ae0-a4b5-8238c12dc6c4"/>
+    <property as="xs:string" name="oxf.http.forward-headers" value="Authorization hybris-Proxy-50c602f5-455c-4eb3-9d01-2ca766fbc70e"/>
 
     <!-- This is only meant for backoffice extension -->
     <property as="xs:string"  name="oxf.xforms.login-page-detection-regexp"          value="login_btn"/>

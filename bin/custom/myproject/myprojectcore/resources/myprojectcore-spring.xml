@@ -63,6 +63,8 @@
 		<property name="rootCategory" value="collections"/> <!-- 'collections' is the root of the collections hierarchy -->
 	</bean>
 
+	<bean id="displayingScaleHandler" class="de.hybris.myproject.core.handlers.DisplayingScaleHandler"/>
+
 	<bean id="abstractCategoryCodeValueProvider" abstract="true"
 	      class="de.hybris.platform.commerceservices.search.solrfacetsearch.provider.impl.CategoryCodeValueProvider"
 	      parent="abstractPropertyFieldValueProvider" >
