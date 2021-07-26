@@ -8,5 +8,5 @@
 			${ycommerce:sanitizeHTML(product.description)}
 		<p>
 	</ycommerce:testId>
-        <div class="description">${ycommerce:sanitizeHTML(product.scale)}</div>
+<%--        <div class="description">${ycommerce:sanitizeHTML(product.scale)}</div>--%>
 </div>

@@ -45,8 +45,8 @@ public class ApparelProductPopulator implements Populator<ProductModel, ProductD
 
 		if (baseProduct instanceof ApparelProductModel)
 		{
-			target.setScale(((ApparelProductModel) baseProduct).getScale());
 			final ApparelProductModel apparelProductModel = (ApparelProductModel) baseProduct;
+			target.setScale(apparelProductModel.getScale());
 			if (CollectionUtils.isNotEmpty(apparelProductModel.getGenders()))
 			{
 				final List<GenderData> genders = new ArrayList<GenderData>();
