@@ -22,7 +22,7 @@
 					<div class="product-details">
 						<product:productPromotionSection product="${product}"/>
 						<ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
-							Scale: ${product.scale} | DisplayingScale: ${product.displayingScale}
+							Scale: ${product.displayingScale}
 							<h1>
 									${product.name}
 							</h1>

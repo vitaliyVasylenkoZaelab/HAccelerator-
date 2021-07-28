@@ -15,6 +15,18 @@ INSERT_UPDATE ApparelProduct;code[unique=true];$catalogVersion;scale
 ;45572;;SMALL
 ;300046587;;BIG
 
+INSERT_UPDATE ApparelProduct;pk[unique=true];code;scale
+;8796158066689;300310300;SMALL
+;8796094431233;300310300;SMALL
+
+
+;8796094693377;M33477_B;BIG
+;8796160098305;M33477_B;BIG
+;8796093251585;45572;SMALL
+;8796156690433;45572;SMALL
+;8796094103553;300046587;MEDIUM
+;8796157739009;300046587;MEDIUM
+
 $productCatalog=apparelProductCatalog
 $catalogVersions=catalogVersions(catalog(id),version);
 $facetSearchConfigName=apparel-ukIndex

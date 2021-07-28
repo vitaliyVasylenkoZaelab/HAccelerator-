@@ -114,5 +114,25 @@
             </itemtype>
         </typegroup>
 
+        <typegroup name="HybrisInstructive">
+            <itemtype code="TrainingComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
+                      jaloclass="co.hybrisinstructive.core.jalo.TrainingComponent">
+                <attributes>
+                    <attribute type="localized:java.lang.String" qualifier="productName">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="localized:java.lang.String" qualifier="brand">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="Media" qualifier="productImage">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
     </itemtypes>
 </items>

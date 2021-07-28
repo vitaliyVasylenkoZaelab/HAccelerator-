@@ -1,13 +1,14 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jul 26, 2021, 10:38:54 PM                   ---
+ * --- Generated at Jul 28, 2021, 10:32:26 AM                   ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved.
  */
 package de.hybris.myproject.core.jalo;
 
+import co.hybrisinstructive.core.jalo.TrainingComponent;
 import de.hybris.myproject.core.constants.MyprojectCoreConstants;
 import de.hybris.myproject.core.jalo.ApparelProduct;
 import de.hybris.myproject.core.jalo.ApparelSizeVariantProduct;
@@ -150,6 +151,32 @@ public abstract class GeneratedMyprojectCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public TrainingComponent createTrainingComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( MyprojectCoreConstants.TC.TRAININGCOMPONENT );
+			return (TrainingComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating TrainingComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public TrainingComponent createTrainingComponent(final Map attributeValues)
+	{
+		return createTrainingComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override
