@@ -8,6 +8,7 @@
         <collectiontype code="GenderList" elementtype="Gender" autocreate="true" generate="true" type="list"/>
         <collectiontype code="SwatchColorSet" elementtype="SwatchColorEnum" autocreate="true" generate="true"
                         type="set"/>
+        <collectiontype code="CustomOfferLinksList" elementtype="CMSLinkComponent" autocreate="true" generate="true" type="list" />
     </collectiontypes>
 
     <enumtypes>
@@ -57,6 +58,32 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
+            <itemtype code="CustomOffersComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
+                      jaloclass="org.training.core.jalo.CustomOffersComponent">
+                <description>Used to display offers on homepage</description>
+                <attributes>
+                    <attribute type="localized:java.lang.String" qualifier="headrerText">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="localized:java.lang.String" qualifier="footerText">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="Media" qualifier="offerImage">
+                        <modifiers read="true" write="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="CustomOfferLinksList" qualifier="offerImageLink">
+                        <persistence type="property" />
+                        <description>List of CMS Link Component</description>
+                        <modifiers read="true" write="true" />
+                    </attribute>
+                </attributes>
+
+            </itemtype>
+            <itemtype code="MyNewAction" jaloclass="de.hybris.platform.acceleratorcms.jalo.actions.MyNewAction" extends="SimpleCMSAction"	autocreate="true" generate="true" />
 
             <itemtype code="ApparelStyleVariantProduct" extends="VariantProduct"
                       autocreate="true" generate="true"
@@ -109,26 +136,6 @@
                         <description>Color of the product.</description>
                         <modifiers/>
                         <persistence type="property"/>
-                    </attribute>
-                </attributes>
-            </itemtype>
-        </typegroup>
-
-        <typegroup name="HybrisInstructive">
-            <itemtype code="TrainingComponent" extends="SimpleCMSComponent" generate="true" autocreate="true"
-                      jaloclass="co.hybrisinstructive.core.jalo.TrainingComponent">
-                <attributes>
-                    <attribute type="localized:java.lang.String" qualifier="productName">
-                        <modifiers read="true" write="true" optional="false" />
-                        <persistence type="property" />
-                    </attribute>
-                    <attribute type="localized:java.lang.String" qualifier="brand">
-                        <modifiers read="true" write="true" optional="false" />
-                        <persistence type="property" />
-                    </attribute>
-                    <attribute type="Media" qualifier="productImage">
-                        <modifiers read="true" write="true" optional="false" />
-                        <persistence type="property" />
                     </attribute>
                 </attributes>
             </itemtype>

@@ -3,7 +3,6 @@
  */
 package de.hybris.myproject.storefront.controllers;
 
-import co.hybrisinstructive.core.model.TrainingComponentModel;
 import de.hybris.platform.acceleratorcms.model.components.CMSTabParagraphContainerModel;
 import de.hybris.platform.acceleratorcms.model.components.CartSuggestionComponentModel;
 import de.hybris.platform.acceleratorcms.model.components.CategoryFeatureComponentModel;
@@ -17,6 +16,7 @@ import de.hybris.platform.acceleratorcms.model.components.SimpleResponsiveBanner
 import de.hybris.platform.acceleratorcms.model.components.SubCategoryListComponentModel;
 import de.hybris.platform.cms2.model.contents.components.CMSLinkComponentModel;
 import de.hybris.platform.cms2lib.model.components.ProductCarouselComponentModel;
+import org.training.core.model.CustomOffersComponentModel;
 
 
 /**
@@ -56,7 +56,7 @@ public interface ControllerConstants
 			String SubCategoryListComponent = _Prefix + SubCategoryListComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String SimpleResponsiveBannerComponent = _Prefix + SimpleResponsiveBannerComponentModel._TYPECODE + _Suffix; // NOSONAR
 			String CMSTabParagraphContainer = _Prefix + CMSTabParagraphContainerModel._TYPECODE + _Suffix; // NOSONAR
-			String TrainingComponent = _Prefix + TrainingComponentModel._TYPECODE + _Suffix; // NOSONAR
+			String CustomOffersComponent = _Prefix + CustomOffersComponentModel._TYPECODE + _Suffix;
 		}
 	}
 

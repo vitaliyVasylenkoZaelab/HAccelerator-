@@ -59,3 +59,57 @@ INSERT_UPDATE SolrSearchQueryProperty;indexedProperty(name, solrIndexedType(iden
 					<property name="propertyName" value="scale" />
 					<property name="boost" value="90" />
 				</bean>
+
+$contentCatalog=apparel-ukContentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+ $productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+ $category=category(code, $productCV)
+$productCatalog=apparelProductCatalog
+$productCatalogName=Apparel Product Catalog
+$lang=en
+$picture=media(code, $contentCV) ;
+$siteResource=jar:de.hybris.platform.apparelstore.constants.ApparelstoreConstants&/apparelstore/import/sampledata/contentCatalogs/$contentCatalog
+$jarResourceCms=jar:de.hybris.platform.apparelstore.constants.ApparelstoreConstants&/apparelstore/import/sampledata/cockpits/cmscockpit
+
+# Load the storefront context root config param
+$storefrontContextRoot=$config-storefrontContextRoot
+
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;
+;;MenOfferLink;Men Offer Link;/MenOfferLink;MenOfferLink;MenOfferLink;;;;
+;;WomenOfferLink;Women Offer Link;/WomenOfferLink;WomenOfferLink;WomenOfferLink;;;;
+;;KidsOfferLink;Kids Offer Link;/KidsOfferLink;KidsOfferLink;KidsOfferLink;;;;
+
+
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
+;;customOffersMedia;$siteResource/images/banners/homepage/offers.jpeg;;offers.jpeg;;
+
+INSERT_UPDATE CustomOffersComponent;$contentCV[unique=true];uid[unique=true];name;headrerText[lang=$lang];footerText[lang=$lang];offerImage(code);&componentRef;offerImageLink(&linkRef);
+;;summerOfferComponent;Summer offer Component;"up to 70 % off";"Grab this offer on all summer<br>Collections";customOffersMedia;summerOfferComponent;MenOfferLink,WomenOfferLink,KidsOfferLink
+
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;SummerOffersSlotName;;CustomOffersComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+;;summerOfferContentSlot;Summer offer slot;true;summerOfferComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;summerOfferslotforpage-Homepage;SummerOffersSlotName;;summerOfferContentSlot
+
+INSERT_UPDATE CronJob;code[unique=true];job(code);sessionLanguage(isoCode)[default=en]
+;scaleAbortableCronJob;scaleAbortableJob;
+
+INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
+; scaleAbortableCronJob; 0/55 * * * * ?
+
+
+UPDATE ApparelProduct[batchmode=true];itemtype(code)[unique=true];name
+;Order;scaleName
+
+REMOVE scaleItemType;PK[batchmode=true];itemtype(code)[unique=true]
+;scaleType
+
+UPDATE ApparelProduct[batchmode=true];scale(code)[unique=true];scale
+;NANO;TINY
+
+REMOVE ApparelProduct[batchmode=true];scale(code)[unique=true];scale
+;TINY

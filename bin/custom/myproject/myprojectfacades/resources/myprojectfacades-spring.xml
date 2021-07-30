@@ -89,6 +89,37 @@
         <property name="scaleConverter" ref="defaultScaleConverter"/>
     </bean>
 
+    <bean id="userInitDefaultInterceptor" class="de.hybris.myproject.facades.interceptors.UserInitDefaultInterceptor"/>
+    <bean id="userInitDefaultInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="userInitDefaultInterceptor" />
+        <property name="typeCode" value="customer" />
+    </bean>
+
+    <bean id="userLoadDefaultInterceptor" class="de.hybris.myproject.facades.interceptors.UserLoadDefaultInterceptor"/>
+    <bean id="userLoadDefaultInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="userLoadDefaultInterceptor" />
+        <property name="typeCode" value="customer" />
+    </bean>
+
+    <bean id="userPrepareDefaultInterceptor" class="de.hybris.myproject.facades.interceptors.UserPrepareDefaultInterceptor"/>
+    <bean id="userPrepareDefaultInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="userPrepareDefaultInterceptor" />
+        <property name="typeCode" value="customer" />
+    </bean>
+
+    <bean id="userRemoveDefaultInterceptor" class="de.hybris.myproject.facades.interceptors.UserRemoveDefaultInterceptor"/>
+    <bean id="userRemoveDefaultInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="userRemoveDefaultInterceptor" />
+        <property name="typeCode" value="customer" />
+    </bean>
+
+    <bean id="userValidateDefaultInterceptor" class="de.hybris.myproject.facades.interceptors.UserValidateDefaultInterceptor"/>
+    <bean id="userValidateDefaultInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="userValidateDefaultInterceptor" />
+        <property name="typeCode" value="customer" />
+    </bean>
+
+
     <bean id="apparelProductPopulator" class="de.hybris.myproject.facades.populators.ApparelProductPopulator">
         <property name="genderConverter" ref="genderConverter"/>
     </bean>

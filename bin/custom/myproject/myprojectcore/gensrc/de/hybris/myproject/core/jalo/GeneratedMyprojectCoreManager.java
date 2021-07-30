@@ -1,19 +1,19 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jul 28, 2021, 10:32:26 AM                   ---
+ * --- Generated at Jul 29, 2021, 2:42:51 PM                    ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved.
  */
 package de.hybris.myproject.core.jalo;
 
-import co.hybrisinstructive.core.jalo.TrainingComponent;
 import de.hybris.myproject.core.constants.MyprojectCoreConstants;
 import de.hybris.myproject.core.jalo.ApparelProduct;
 import de.hybris.myproject.core.jalo.ApparelSizeVariantProduct;
 import de.hybris.myproject.core.jalo.ApparelStyleVariantProduct;
 import de.hybris.myproject.core.jalo.ElectronicsColorVariantProduct;
+import de.hybris.platform.acceleratorcms.jalo.actions.MyNewAction;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
@@ -24,6 +24,7 @@ import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import java.util.HashMap;
 import java.util.Map;
+import org.training.core.jalo.CustomOffersComponent;
 
 /**
  * Generated class for type <code>MyprojectCoreManager</code>.
@@ -127,6 +128,32 @@ public abstract class GeneratedMyprojectCoreManager extends Extension
 		return createApparelStyleVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
 	
+	public CustomOffersComponent createCustomOffersComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( MyprojectCoreConstants.TC.CUSTOMOFFERSCOMPONENT );
+			return (CustomOffersComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating CustomOffersComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public CustomOffersComponent createCustomOffersComponent(final Map attributeValues)
+	{
+		return createCustomOffersComponent( getSession().getSessionContext(), attributeValues );
+	}
+	
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final SessionContext ctx, final Map attributeValues)
 	{
 		try
@@ -153,12 +180,12 @@ public abstract class GeneratedMyprojectCoreManager extends Extension
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
 	}
 	
-	public TrainingComponent createTrainingComponent(final SessionContext ctx, final Map attributeValues)
+	public MyNewAction createMyNewAction(final SessionContext ctx, final Map attributeValues)
 	{
 		try
 		{
-			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( MyprojectCoreConstants.TC.TRAININGCOMPONENT );
-			return (TrainingComponent)type.newInstance( ctx, attributeValues );
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( MyprojectCoreConstants.TC.MYNEWACTION );
+			return (MyNewAction)type.newInstance( ctx, attributeValues );
 		}
 		catch( JaloGenericCreationException e)
 		{
@@ -170,13 +197,13 @@ public abstract class GeneratedMyprojectCoreManager extends Extension
 		}
 		catch( JaloBusinessException e )
 		{
-			throw new JaloSystemException( e ,"error creating TrainingComponent : "+e.getMessage(), 0 );
+			throw new JaloSystemException( e ,"error creating MyNewAction : "+e.getMessage(), 0 );
 		}
 	}
 	
-	public TrainingComponent createTrainingComponent(final Map attributeValues)
+	public MyNewAction createMyNewAction(final Map attributeValues)
 	{
-		return createTrainingComponent( getSession().getSessionContext(), attributeValues );
+		return createMyNewAction( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

@@ -41,6 +41,9 @@
         <property name="priceService" ref="priceService"/>
     </bean>
 
+	<bean id="scaleAbortableJob" class="de.hybris.myproject.core.job.ScaleAbortableJob" parent="abstractJobPerformable">
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
 
 	<bean id="electronicsCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="1"/>

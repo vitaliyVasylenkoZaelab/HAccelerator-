@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Jul 28, 2021, 10:32:26 AM                   ---
+ * --- Generated at Jul 29, 2021, 2:42:51 PM                    ---
  * ----------------------------------------------------------------
  *  
  * Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved.
@@ -21,9 +21,10 @@ public class GeneratedMyprojectCoreConstants
 		public static final String APPARELPRODUCT = "ApparelProduct".intern();
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
+		public static final String CUSTOMOFFERSCOMPONENT = "CustomOffersComponent".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+		public static final String MYNEWACTION = "MyNewAction".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
-		public static final String TRAININGCOMPONENT = "TrainingComponent".intern();
 	}
 	public static class Attributes
 	{
