@@ -113,3 +113,17 @@ UPDATE ApparelProduct[batchmode=true];scale(code)[unique=true];scale
 
 REMOVE ApparelProduct[batchmode=true];scale(code)[unique=true];scale
 ;TINY
+
+INSERT_UPDATE Currency[disable.interceptor.types=validate];isocode[unique=true];symbol;digits;
+;USD_Test;-2;$
+
+INSERT_UPDATE Currency[disable.interceptor.beans='UserPrepareDefaultInterceptor'];isocode[unique=true];symbol;digits;
+;USD_Test;-2;$
+
+INSERT_UPDATE Currency[disable.UniqueAttributeValidator.for.types='Currency'];isocode[unique=true];symbol;digits;
+;USD_Test;-2;$
+
+INSERT_UPDATE SerachRestriction;code[unique=true];name[lang=en];principal(UID);restrictedType(code);active;generate;query
+;scaleRestriction;scaleRestriction;emploteegroup;Customer;true;true;{uid} !='william.hunter@rustic-hw.com'
+
+select * from {apparelProduct} where {scale} is not null
